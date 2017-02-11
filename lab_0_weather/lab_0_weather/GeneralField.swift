@@ -20,6 +20,8 @@ class GeneralField: UILabel {
         self.font = UIFont.systemFont(ofSize: Cons.generalField.fontSize,
                                       weight: Cons.generalField.fontWeight)
         
+        self.textAlignment = .center
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
