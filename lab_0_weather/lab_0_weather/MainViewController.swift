@@ -11,13 +11,21 @@ import UIKit
 class MainViewController: UIViewController {
 
     let infoContainer = InfoContainer()
+    let imageLayer = CALayer()
+    let darkOverlay = CALayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.view.backgroundColor = UIColor.green.withAlphaComponent(0.5)
+        let backgroundImage = UIImage(named: "Snow_Background")!.scaleToSize(scaleSize: Cons.screen.bounds.size)
+        self.imageLayer.frame = Cons.screen.bounds
+        self.imageLayer.contents = backgroundImage.cgImage
         
+        self.darkOverlay.frame = Cons.screen.bounds
+        self.darkOverlay.backgroundColor = Cons.screen.overlayColor.cgColor
+        
+        self.view.layer.addSublayer(self.imageLayer)
+        self.view.layer.addSublayer(self.darkOverlay)
         self.view.addSubview(self.infoContainer)
         
         customLayout()

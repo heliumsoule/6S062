@@ -10,6 +10,12 @@ import UIKit
 
 struct Cons {
     
+    struct screen {
+        static let bounds = UIScreen.main.bounds
+        
+        static let overlayColor = UIColor.black.withAlphaComponent(0.25)
+    }
+    
     struct weather {
         static let fields = [
             "Temperature",
@@ -22,10 +28,10 @@ struct Cons {
     
     struct generalField {
         
-        static let textColor = UIColor.cyan
+        static let textColor = UIColor.white
         
-        static let fontSize:CGFloat = 16.0
-        static let fontWeight = UIFontWeightRegular
+        static let fontSize:CGFloat = 18.0
+        static let fontWeight = UIFontWeightLight
     }
     
 }

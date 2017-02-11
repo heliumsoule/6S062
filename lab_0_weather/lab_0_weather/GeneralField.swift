@@ -20,7 +20,7 @@ class GeneralField: UILabel {
         self.font = UIFont.systemFont(ofSize: Cons.generalField.fontSize,
                                       weight: Cons.generalField.fontWeight)
         
-        self.textAlignment = .center
+        self.textAlignment = .left
         
     }
     

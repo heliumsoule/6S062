@@ -39,8 +39,10 @@ class InfoContainer: UIView {
         
         weatherFields.forEach {
             
-            self.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: $0, sides: [.left, .right], padding: 0))
-            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: $0, spacing: 0))
+            self.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: $0, side: .right, padding: 0))
+            self.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: $0, side: .left, padding: 15))
+            
+            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: $0, spacing: 10))
             
             if $0 == weatherFields.last {
                 self.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: $0, side: .bottom, padding: 0))
