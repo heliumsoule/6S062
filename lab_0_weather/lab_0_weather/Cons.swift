@@ -34,6 +34,22 @@ struct Cons {
         
     }
     
+    struct searchField {
+        
+        static let placeholder = "Enter zip code here."
+        
+        static let fontSize:CGFloat = 18.0
+        
+        static let padding = UIEdgeInsets(top: 7, left: 5, bottom: 7, right: 0)
+        
+        static let color = UIColor.white
+        
+        static let borderWidth:CGFloat = 2.0
+        static let borderColor = UIColor.white
+        static let backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        
+    }
+    
     struct weather {
         static let fields = [
             "Temperature",

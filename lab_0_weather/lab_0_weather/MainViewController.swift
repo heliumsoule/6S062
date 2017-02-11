@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    let searchButton = SearchActionButton()
+    let searchContainer = SearchActionContainer()
     
     let infoContainer = InfoContainer()
     let imageLayer = CALayer()
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         self.view.layer.addSublayer(self.darkOverlay)
     
         self.view.addSubview(self.infoContainer)
-        self.view.addSubview(self.searchButton)
+        self.view.addSubview(self.searchContainer)
         
         customLayout()
     }
@@ -45,11 +45,8 @@ class MainViewController: UIViewController {
         self.view.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: self.infoContainer, sides: [.left, .right], padding: 0))
         self.view.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: self.infoContainer, side: .top, padding: 64))
         
-        self.view.addConstraint(QLayoutConstraint.constantConstraint(view: self.searchButton, attribute: .height, value: Cons.searchButton.diameter))
-        self.view.addConstraint(QLayoutConstraint.constantConstraint(view: self.searchButton, attribute: .width, value: Cons.searchButton.diameter))
-        self.view.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: self.searchButton, sides: [.right, .bottom], padding: 15))
-        
-//        self.view.addConstraints(QLayoutConstraint.fillYConstraints(view: self.infoContainer, heightRatio: 0.6))
+        self.view.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: self.searchContainer, sides: [.left, .bottom, .right], padding: 0))
+        self.view.addConstraint(QLayoutConstraint.constantConstraint(view: self.searchContainer, attribute: .height, value: 59))
         
     }
 
