@@ -17,6 +17,7 @@
 		DC5CBCC91E4E6DA80036EAF8 /* InfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCC81E4E6DA80036EAF8 /* InfoContainer.swift */; };
 		DC5CBCCB1E4E730A0036EAF8 /* QLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCA1E4E730A0036EAF8 /* QLayoutConstraints.swift */; };
 		DC5CBCCD1E4ED6F50036EAF8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */; };
+		DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DC5CBCC81E4E6DA80036EAF8 /* InfoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoContainer.swift; sourceTree = "<group>"; };
 		DC5CBCCA1E4E730A0036EAF8 /* QLayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLayoutConstraints.swift; sourceTree = "<group>"; };
 		DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				DC5CBCB21E4E69690036EAF8 /* AppDelegate.swift */,
 				DC5CBCB41E4E69690036EAF8 /* MainViewController.swift */,
 				DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */,
+				DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */,
 				DC5CBCC41E4E6BBD0036EAF8 /* GeneralField.swift */,
 				DC5CBCC81E4E6DA80036EAF8 /* InfoContainer.swift */,
 				DC5CBCCA1E4E730A0036EAF8 /* QLayoutConstraints.swift */,
@@ -225,6 +228,7 @@
 				DC5CBCC71E4E6C160036EAF8 /* Cons.swift in Sources */,
 				DC5CBCC51E4E6BBD0036EAF8 /* GeneralField.swift in Sources */,
 				DC5CBCCB1E4E730A0036EAF8 /* QLayoutConstraints.swift in Sources */,
+				DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */,
 				DC5CBCC91E4E6DA80036EAF8 /* InfoContainer.swift in Sources */,
 				DC5CBCB51E4E69690036EAF8 /* MainViewController.swift in Sources */,
 				DC5CBCB31E4E69690036EAF8 /* AppDelegate.swift in Sources */,

@@ -16,6 +16,24 @@ struct Cons {
         static let overlayColor = UIColor.black.withAlphaComponent(0.25)
     }
     
+    struct searchButton {
+        
+        static let radius:CGFloat = 22.0
+        static let diameter:CGFloat = 44.0
+        
+        static let color = UIColor(red: CGFloat(33.0 / 255),
+                                   green: CGFloat(174.0 / 255),
+                                   blue: CGFloat(254.0 / 255),
+                                   alpha: 1.0)
+        
+        static let highlightedColor = UIColor(red: CGFloat(29.0 / 255),
+                                              green: CGFloat(155.0 / 255),
+                                              blue: CGFloat(228.0 / 255),
+                                              alpha: 1.0)
+        static let tintColor = UIColor.white
+        
+    }
+    
     struct weather {
         static let fields = [
             "Temperature",
@@ -30,7 +48,7 @@ struct Cons {
         
         static let textColor = UIColor.white
         
-        static let fontSize:CGFloat = 18.0
+        static let fontSize:CGFloat = 20.0
         static let fontWeight = UIFontWeightLight
     }
     
