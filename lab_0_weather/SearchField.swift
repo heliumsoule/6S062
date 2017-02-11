@@ -65,6 +65,10 @@ class SearchField: UITextField {
         return super.editingRect(forBounds: UIEdgeInsetsInsetRect(bounds, self.padding))
     }
     
+    func changeSearchState(isEditing: Bool) {
+        let _ = isEditing ? self.becomeFirstResponder() : self.resignFirstResponder()
+    }
+    
 }
 
 

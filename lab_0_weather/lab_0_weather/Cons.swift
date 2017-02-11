@@ -30,6 +30,19 @@ struct Cons {
                                               green: CGFloat(155.0 / 255),
                                               blue: CGFloat(228.0 / 255),
                                               alpha: 1.0)
+        
+        static let actionImg = UIImage(named: "Location_Icon")!.withRenderingMode(.alwaysTemplate)
+        static let cancelImg = UIImage(named: "Cross")!.withRenderingMode(.alwaysTemplate)
+        static let actionInsets = UIEdgeInsets(top: radius / 2,
+                                               left: radius / 3,
+                                               bottom: radius / 4,
+                                               right: radius / 2)
+        static let cancelInsets = UIEdgeInsets(top: radius / 2,
+                                               left: radius / 2,
+                                               bottom: radius / 2,
+                                               right: radius / 2)
+
+        
         static let tintColor = UIColor.white
         
     }

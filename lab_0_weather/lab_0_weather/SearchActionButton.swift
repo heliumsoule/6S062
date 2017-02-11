@@ -18,19 +18,12 @@ class SearchActionButton: UIButton {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.setImage(UIImage(named: "Location_Icon")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        self.setImage(UIImage(named: "Location_Icon")!.withRenderingMode(.alwaysTemplate), for: .highlighted)
-        self.imageEdgeInsets = UIEdgeInsets(top: self.radius / 2,
-                                            left: self.radius / 3,
-                                            bottom: self.radius / 4,
-                                            right: self.radius / 2)
-        
+        self.changeSearchState(isEditing: false)
         self.tintColor = Cons.searchButton.tintColor
         
         self.layer.cornerRadius = radius
         self.backgroundColor = Cons.searchButton.color
-        
-        
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,4 +41,24 @@ class SearchActionButton: UIButton {
         
     }
     
+    func changeSearchState(isEditing: Bool) {
+        let currImage = isEditing ? Cons.searchButton.cancelImg : Cons.searchButton.actionImg
+        let currInsets = isEditing ? Cons.searchButton.cancelInsets: Cons.searchButton.actionInsets
+        
+        self.setImage(currImage, for: .normal)
+        self.setImage(currImage, for: .highlighted)
+        self.imageEdgeInsets = currInsets
+
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
