@@ -8,6 +8,13 @@
 
 import Alamofire
 
+enum Router: URLRequestConvertible {
+    
+    static let baseURLString = "
+    
+    
+}
+
 //enum Router: URLRequestConvertible {
 //    static let baseURLString = "http://ec2-54-87-129-225.compute-1.amazonaws.com/api"
 //    static var authorizationToken:String?
