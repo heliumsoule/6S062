@@ -10,8 +10,21 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    static let baseURLString = "
+    static let baseURLString = "http://api.wunderground.com/api/"
+    static var authorizationToken:String = WeatherUnderground.API
     
+    case ReadWeather(String)
+    
+    var method: Alamofire.Method {
+        switch self {
+        case .ReadWeather:
+            return .GET
+        }
+    }
+    
+    var path:String {
+        
+    }
     
 }
 
