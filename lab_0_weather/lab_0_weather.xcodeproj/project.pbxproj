@@ -19,9 +19,9 @@
 		DC5CBCCD1E4ED6F50036EAF8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */; };
 		DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */; };
 		DC5CBCD11E4EEAE50036EAF8 /* SearchActionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */; };
-		DC5CBCD31E4EEB260036EAF8 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */; };
 		DC5CBCD91E502D4E0036EAF8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD81E502D4E0036EAF8 /* Router.swift */; };
 		DC5CBCDB1E50445A0036EAF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCDA1E50445A0036EAF8 /* API.swift */; };
+		DC5CBCDD1E5045A90036EAF8 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +41,9 @@
 		DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActionButton.swift; sourceTree = "<group>"; };
 		DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActionContainer.swift; sourceTree = "<group>"; };
-		DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchField.swift; path = ../SearchField.swift; sourceTree = "<group>"; };
 		DC5CBCD81E502D4E0036EAF8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DC5CBCDA1E50445A0036EAF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */,
-				DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */,
 				DC5CBCB21E4E69690036EAF8 /* AppDelegate.swift */,
 				DC5CBCD81E502D4E0036EAF8 /* Router.swift */,
+				DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */,
 				DC5CBCDA1E50445A0036EAF8 /* API.swift */,
 				DC5CBCB41E4E69690036EAF8 /* MainViewController.swift */,
 				DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */,
@@ -243,8 +243,8 @@
 				DC5CBCC51E4E6BBD0036EAF8 /* GeneralField.swift in Sources */,
 				DC5CBCCB1E4E730A0036EAF8 /* QLayoutConstraints.swift in Sources */,
 				DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */,
+				DC5CBCDD1E5045A90036EAF8 /* SearchField.swift in Sources */,
 				DC5CBCC91E4E6DA80036EAF8 /* InfoContainer.swift in Sources */,
-				DC5CBCD31E4EEB260036EAF8 /* SearchField.swift in Sources */,
 				DC5CBCB51E4E69690036EAF8 /* MainViewController.swift in Sources */,
 				DC5CBCB31E4E69690036EAF8 /* AppDelegate.swift in Sources */,
 				DC5CBCDB1E50445A0036EAF8 /* API.swift in Sources */,
