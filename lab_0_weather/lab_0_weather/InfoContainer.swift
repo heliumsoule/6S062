@@ -77,13 +77,14 @@ class InfoContainer: UIView {
 
 extension InfoContainer: WeatherInfoProtocol {
     
-    func updateWeatherInfo(city: String, zipcode: String, temperature: String, humidity: String, wind: String, visibility: String) {
+    func updateWeatherInfo(city: String, zipcode: String, temperature: String, desc: String, humidity: String, wind: String, visibility: String) {
         self.titleElement.text = "\(city) - \(zipcode)"
         
         self.weatherFields[0].1.text = temperature
-        self.weatherFields[1].1.text = humidity
-        self.weatherFields[2].1.text = wind
-        self.weatherFields[3].1.text = visibility
+        self.weatherFields[1].1.text = desc
+        self.weatherFields[2].1.text = humidity
+        self.weatherFields[3].1.text = wind
+        self.weatherFields[4].1.text = visibility
         
         weatherFields.forEach { (_, desc) in
             

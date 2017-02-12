@@ -10,6 +10,6 @@ import UIKit
 
 protocol WeatherInfoProtocol {
     
-    func updateWeatherInfo(city: String, zipcode: String, temperature: String, humidity: String, wind: String, visibility: String)
+    func updateWeatherInfo(city: String, zipcode: String, temperature: String, desc: String, humidity: String, wind: String, visibility: String)
     
 }

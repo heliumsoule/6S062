@@ -87,6 +87,7 @@ extension SearchActionContainer {
                         
                         let city = locationJSON["city"] as! String
                         let temperature = weatherJSON["temperature_string"] as! String
+                        let description = weatherJSON["weather"] as! String
                         let humidity = weatherJSON["relative_humidity"] as! String
                         let wind = weatherJSON["wind_string"] as! String
                         let visibility = weatherJSON["visibility_km"] as! String
@@ -95,6 +96,7 @@ extension SearchActionContainer {
                         self.weatherDelegate.updateWeatherInfo(city: city,
                                                                zipcode: zipcode,
                                                                temperature: temperature,
+                                                               desc: description,
                                                                humidity: humidity,
                                                                wind: wind,
                                                                visibility: visibilityKm)

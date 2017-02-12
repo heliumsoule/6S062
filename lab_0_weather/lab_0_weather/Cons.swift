@@ -85,7 +85,7 @@ struct Cons {
     struct weather {
         static let fields = [
             "Temperature",
-//            "Description",
+            "Description",
             "Humidity",
             "Wind",
             "Visibility"
