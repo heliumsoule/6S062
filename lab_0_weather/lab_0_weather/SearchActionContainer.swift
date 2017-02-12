@@ -17,9 +17,8 @@ class SearchActionContainer: UIView {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
-    
-        self.searchField.delegate = self
         
+        self.searchField.addTarget(self, action: #selector(self.searchFieldChanged), for: .editingChanged)
         self.searchButton.addTarget(self, action: #selector(self.changeEditing), for: .touchUpInside)
         
         self.addSubview(self.searchField)
@@ -42,6 +41,10 @@ class SearchActionContainer: UIView {
         self.addConstraint(QLayoutConstraint.horizontalSpacingConstraint(leftView: self.searchField, rightView: self.searchButton, spacing: 15))
     }
     
+}
+
+extension SearchActionContainer {
+
     func changeEditing() {
         switch self.searchButton.currentState {
         case .KeyboardDown:
@@ -53,26 +56,27 @@ class SearchActionContainer: UIView {
             self.searchButton.changeSearchState(updatedState: .KeyboardDown)
             
         case .TextFieldFilled:
+            
+            self.searchField.text = ""
             self.searchField.changeSearchState(isEditing: false)
             self.searchButton.changeSearchState(updatedState: .KeyboardDown)
         }
     }
     
-}
-
-extension SearchActionContainer: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if range.location == 0 && string.characters.count == 0 {
-            
+    func searchFieldChanged() {
+        guard self.searchField.text != nil else {
             self.searchButton.changeSearchState(updatedState: .TextFieldEmpty)
+            
+            return
         }
         
-        self.searchButton.changeSearchState(updatedState: .TextFieldFilled)
-        
-        return true
+        let currText = self.searchField.text!
+        if currText.characters.count > 0 {
+            self.searchButton.changeSearchState(updatedState: .TextFieldFilled)
+        } else {
+            self.searchButton.changeSearchState(updatedState: .TextFieldEmpty)
+        }
     }
-    
     
 }
 

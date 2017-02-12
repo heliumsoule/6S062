@@ -20,6 +20,7 @@
 		DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */; };
 		DC5CBCD11E4EEAE50036EAF8 /* SearchActionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */; };
 		DC5CBCD31E4EEB260036EAF8 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */; };
+		DC5CBCD91E502D4E0036EAF8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD81E502D4E0036EAF8 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActionButton.swift; sourceTree = "<group>"; };
 		DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchActionContainer.swift; sourceTree = "<group>"; };
 		DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchField.swift; path = ../SearchField.swift; sourceTree = "<group>"; };
+		DC5CBCD81E502D4E0036EAF8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */,
 				DC5CBCD21E4EEB260036EAF8 /* SearchField.swift */,
 				DC5CBCB21E4E69690036EAF8 /* AppDelegate.swift */,
+				DC5CBCD81E502D4E0036EAF8 /* Router.swift */,
 				DC5CBCB41E4E69690036EAF8 /* MainViewController.swift */,
 				DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */,
 				DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5CBCD91E502D4E0036EAF8 /* Router.swift in Sources */,
 				DC5CBCC71E4E6C160036EAF8 /* Cons.swift in Sources */,
 				DC5CBCD11E4EEAE50036EAF8 /* SearchActionContainer.swift in Sources */,
 				DC5CBCC51E4E6BBD0036EAF8 /* GeneralField.swift in Sources */,
