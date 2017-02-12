@@ -10,7 +10,15 @@ import UIKit
 
 class SearchActionButton: UIButton {
     
+    enum State {
+        case KeyboardDown
+        case TextFieldEmpty
+        case TextFieldFilled
+//        case Complete
+    }
+    
     let radius = Cons.searchButton.radius
+    var currentState:State = .KeyboardDown
     
     init() {
         
@@ -18,7 +26,7 @@ class SearchActionButton: UIButton {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.changeSearchState(isEditing: false)
+        self.changeSearchState(updatedState: .KeyboardDown)
         self.tintColor = Cons.searchButton.tintColor
         
         self.layer.cornerRadius = radius
@@ -41,14 +49,31 @@ class SearchActionButton: UIButton {
         
     }
     
-    func changeSearchState(isEditing: Bool) {
-        let currImage = isEditing ? Cons.searchButton.cancelImg : Cons.searchButton.actionImg
-        let currInsets = isEditing ? Cons.searchButton.cancelInsets: Cons.searchButton.actionInsets
+    func changeSearchState(updatedState: State) {
+        var currImage:UIImage
+        var currInsets:UIEdgeInsets
         
+        switch updatedState {
+            
+        case .KeyboardDown:
+            currImage = Cons.searchButton.actionImg
+            currInsets = Cons.searchButton.actionInsets
+            
+        case .TextFieldEmpty:
+            currImage = Cons.searchButton.cancelImg
+            currInsets = Cons.searchButton.cancelInsets
+            
+        case .TextFieldFilled:
+            currImage = Cons.searchButton.filledImg
+            currInsets = UIEdgeInsets.zero
+//            currInsets = Cons.searchButton.cancelInsets
+            
+        }
         self.setImage(currImage, for: .normal)
         self.setImage(currImage, for: .highlighted)
         self.imageEdgeInsets = currInsets
 
+        self.currentState = updatedState
     }
     
 }

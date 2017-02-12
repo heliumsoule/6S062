@@ -13,18 +13,13 @@ class SearchActionContainer: UIView {
     let searchButton = SearchActionButton()
     let searchField = SearchField()
     
-    var isEditing:Bool = false {
-        didSet {
-            self.searchField.changeSearchState(isEditing: isEditing)
-            self.searchButton.changeSearchState(isEditing: isEditing)
-        }
-    }
-    
     init() {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
     
+        self.searchField.delegate = self
+        
         self.searchButton.addTarget(self, action: #selector(self.changeEditing), for: .touchUpInside)
         
         self.addSubview(self.searchField)
@@ -48,11 +43,38 @@ class SearchActionContainer: UIView {
     }
     
     func changeEditing() {
-        self.isEditing = !self.isEditing
+        switch self.searchButton.currentState {
+        case .KeyboardDown:
+            self.searchField.changeSearchState(isEditing: true)
+            self.searchButton.changeSearchState(updatedState: .TextFieldEmpty)
+            
+        case .TextFieldEmpty:
+            self.searchField.changeSearchState(isEditing: false)
+            self.searchButton.changeSearchState(updatedState: .KeyboardDown)
+            
+        case .TextFieldFilled:
+            self.searchField.changeSearchState(isEditing: false)
+            self.searchButton.changeSearchState(updatedState: .KeyboardDown)
+        }
     }
-
+    
 }
 
+extension SearchActionContainer: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.location == 0 && string.characters.count == 0 {
+            
+            self.searchButton.changeSearchState(updatedState: .TextFieldEmpty)
+        }
+        
+        self.searchButton.changeSearchState(updatedState: .TextFieldFilled)
+        
+        return true
+    }
+    
+    
+}
 
 
 

@@ -33,6 +33,8 @@ struct Cons {
         
         static let actionImg = UIImage(named: "Location_Icon")!.withRenderingMode(.alwaysTemplate)
         static let cancelImg = UIImage(named: "Cross")!.withRenderingMode(.alwaysTemplate)
+        static let filledImg = UIImage(named: "Check")!.withRenderingMode(.alwaysTemplate)
+        
         static let actionInsets = UIEdgeInsets(top: radius / 2,
                                                left: radius / 3,
                                                bottom: radius / 4,
