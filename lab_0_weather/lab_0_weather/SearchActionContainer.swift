@@ -19,6 +19,8 @@ class SearchActionContainer: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.searchField.addTarget(self, action: #selector(self.searchFieldChanged), for: .editingChanged)
+        self.searchField.addTarget(self, action: #selector(self.searchFieldChanged), for: .editingDidBegin)
+        
         self.searchButton.addTarget(self, action: #selector(self.changeEditing), for: .touchUpInside)
         
         self.addSubview(self.searchField)

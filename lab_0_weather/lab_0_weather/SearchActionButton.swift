@@ -14,7 +14,6 @@ class SearchActionButton: UIButton {
         case KeyboardDown
         case TextFieldEmpty
         case TextFieldFilled
-//        case Complete
     }
     
     let radius = Cons.searchButton.radius

@@ -96,7 +96,9 @@ class MainViewController: UIViewController {
     }
     
     func hideKeyboard() {
-        self.view.endEditing(true)
+        self.searchContainer.searchField.changeSearchState(isEditing: false)
+        self.searchContainer.searchButton.changeSearchState(updatedState: .KeyboardDown)
+        
     }
     
     
