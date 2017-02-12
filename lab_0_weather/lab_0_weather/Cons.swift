@@ -70,6 +70,18 @@ struct Cons {
         
     }
     
+    struct searchError {
+        
+        static let font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)
+        
+        static let backgroundColor = UIColor.red.withAlphaComponent(0.3)
+        
+        static let color = UIColor.white
+        
+        static let errorMsg = "Sorry, but the zipcode doesn't exist."
+        
+    }
+    
     struct weather {
         static let fields = [
             "Temperature",
