@@ -21,7 +21,7 @@ class GeneralField: UILabel {
                                       weight: Cons.generalField.fontWeight)
         
         self.textAlignment = .left
-        
+        self.numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {

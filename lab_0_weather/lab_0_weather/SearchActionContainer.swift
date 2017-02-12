@@ -70,15 +70,20 @@ extension SearchActionContainer {
                     
                     let dataJSON = String(data: data, encoding: .utf8)!.convertToDictionary()!
                     if let weatherJSON = dataJSON["current_observation"] as? [String: Any] {
+                        let locationJSON = weatherJSON["display_location"] as! [String: Any]
                         
+                        let city = locationJSON["city"] as! String
                         let temperature = weatherJSON["temperature_string"] as! String
                         let humidity = weatherJSON["relative_humidity"] as! String
                         let wind = weatherJSON["wind_string"] as! String
                         let visibility = weatherJSON["visibility_km"] as! String
                         
-                        print("The fields found are \(temperature), \(humidity), \(wind), \(visibility)")
-                        
-                        
+                        self.weatherDelegate.updateWeatherInfo(city: city,
+                                                               zipcode: zipcode,
+                                                               temperature: temperature,
+                                                               humidity: humidity,
+                                                               wind: wind,
+                                                               visibility: visibility)
                         
                         self.searchField.text = ""
                         self.searchField.changeSearchState(isEditing: false)

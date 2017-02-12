@@ -16,6 +16,11 @@ struct Cons {
         static let overlayColor = UIColor.black.withAlphaComponent(0.25)
     }
     
+    struct color {
+        
+        static let clearColor = UIColor.clear
+    }
+    
     struct searchButton {
         
         static let radius:CGFloat = 22.0
@@ -68,7 +73,7 @@ struct Cons {
     struct weather {
         static let fields = [
             "Temperature",
-            "Description",
+//            "Description",
             "Humidity",
             "Wind",
             "Visibility"
