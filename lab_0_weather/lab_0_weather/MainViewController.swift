@@ -19,8 +19,9 @@ class MainViewController: UIViewController {
     let darkOverlay = CALayer()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+
+        self.searchContainer.weatherDelegate = infoContainer
         
         let backgroundImage = UIImage(named: "Snow_Background")!.scaleToSize(scaleSize: Cons.screen.bounds.size)
         self.imageLayer.frame = Cons.screen.bounds

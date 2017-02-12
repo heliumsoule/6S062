@@ -53,3 +53,20 @@ class InfoContainer: UIView {
     }
     
 }
+
+extension InfoContainer: WeatherInfoProtocol {
+    
+    func updateWeatherInfo(city: String, zipcode: String, temperature: String, humidity: String, wind: String, visibility: String) {
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+

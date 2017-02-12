@@ -14,7 +14,10 @@ class SearchActionContainer: UIView {
     let searchButton = SearchActionButton()
     let searchField = SearchField()
     
+    var weatherDelegate:WeatherInfoProtocol!
+    
     init() {
+        
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -60,15 +63,34 @@ extension SearchActionContainer {
             
         case .TextFieldFilled:
             
-            Alamofire.request(Router.ReadWeather("0sd2139")).responseString { response in
-                print("The response was")
-                print(response)
+            let zipcode = self.searchField.text!
+                
+            Alamofire.request(Router.ReadWeather(zipcode)).responseJSON { response in
+                if let data = response.data {
+                    
+                    let dataJSON = String(data: data, encoding: .utf8)!.convertToDictionary()!
+                    if let weatherJSON = dataJSON["current_observation"] as? [String: Any] {
+                        
+                        let temperature = weatherJSON["temperature_string"] as! String
+                        let humidity = weatherJSON["relative_humidity"] as! String
+                        let wind = weatherJSON["wind_string"] as! String
+                        let visibility = weatherJSON["visibility_km"] as! String
+                        
+                        print("The fields found are \(temperature), \(humidity), \(wind), \(visibility)")
+                        
+                        
+                        
+                        self.searchField.text = ""
+                        self.searchField.changeSearchState(isEditing: false)
+                        self.searchButton.changeSearchState(updatedState: .KeyboardDown)
+                    } else {
+                        print("The city couldn't be found")
+                    }
+                    
+                } else if let error = response.error {
+                    print("The error was \(error)")
+                }
             }
-            
-            
-            self.searchField.text = ""
-            self.searchField.changeSearchState(isEditing: false)
-            self.searchButton.changeSearchState(updatedState: .KeyboardDown)
         }
     }
     

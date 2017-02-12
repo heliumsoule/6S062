@@ -22,6 +22,7 @@
 		DC5CBCD91E502D4E0036EAF8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCD81E502D4E0036EAF8 /* Router.swift */; };
 		DC5CBCDB1E50445A0036EAF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCDA1E50445A0036EAF8 /* API.swift */; };
 		DC5CBCDD1E5045A90036EAF8 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */; };
+		DC5CBCDF1E5061140036EAF8 /* WeatherInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CBCDE1E5061140036EAF8 /* WeatherInfoProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DC5CBCD81E502D4E0036EAF8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DC5CBCDA1E50445A0036EAF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		DC5CBCDE1E5061140036EAF8 /* WeatherInfoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DC5CBCB21E4E69690036EAF8 /* AppDelegate.swift */,
 				DC5CBCD81E502D4E0036EAF8 /* Router.swift */,
 				DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */,
+				DC5CBCDE1E5061140036EAF8 /* WeatherInfoProtocol.swift */,
 				DC5CBCDA1E50445A0036EAF8 /* API.swift */,
 				DC5CBCB41E4E69690036EAF8 /* MainViewController.swift */,
 				DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */,
@@ -242,6 +245,7 @@
 				DC5CBCD11E4EEAE50036EAF8 /* SearchActionContainer.swift in Sources */,
 				DC5CBCC51E4E6BBD0036EAF8 /* GeneralField.swift in Sources */,
 				DC5CBCCB1E4E730A0036EAF8 /* QLayoutConstraints.swift in Sources */,
+				DC5CBCDF1E5061140036EAF8 /* WeatherInfoProtocol.swift in Sources */,
 				DC5CBCCF1E4EDDF50036EAF8 /* SearchActionButton.swift in Sources */,
 				DC5CBCDD1E5045A90036EAF8 /* SearchField.swift in Sources */,
 				DC5CBCC91E4E6DA80036EAF8 /* InfoContainer.swift in Sources */,
