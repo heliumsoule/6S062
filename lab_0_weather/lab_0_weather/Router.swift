@@ -10,20 +10,32 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    static let baseURLString = "http://api.wunderground.com/api/"
-    static var authorizationToken:String = WeatherUnderground.API
-    
+    static let baseURLString = "https://api.wunderground.com/api/\(WeatherUnderground.API)"
+
     case ReadWeather(String)
     
-    var method: Alamofire.Method {
+    var method: Alamofire.HTTPMethod {
         switch self {
         case .ReadWeather:
-            return .GET
+            return .get
         }
     }
     
     var path:String {
+        switch self {
+        case .ReadWeather(let zipcode):
+            return "/conditions/q/\(zipcode).json"
+        }
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = NSURL(string: Router.baseURLString)!
+        let urlRequest = URLRequest(url: url.appendingPathComponent(path)!)
         
+        switch self {
+        case .ReadWeather:
+            return urlRequest
+        }
     }
     
 }
@@ -31,7 +43,7 @@ enum Router: URLRequestConvertible {
 //enum Router: URLRequestConvertible {
 //    static let baseURLString = "http://ec2-54-87-129-225.compute-1.amazonaws.com/api"
 //    static var authorizationToken:String?
-//    
+//
 //    case create_user([String: AnyObject])
 //    case update_user_location([String: AnyObject])
 //    

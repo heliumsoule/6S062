@@ -6,6 +6,7 @@
 //  Copyright © 2017 6S062. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 
 class SearchActionContainer: UIView {
@@ -58,6 +59,12 @@ extension SearchActionContainer {
             self.searchButton.changeSearchState(updatedState: .KeyboardDown)
             
         case .TextFieldFilled:
+            
+            Alamofire.request(Router.ReadWeather("0sd2139")).responseString { response in
+                print("The response was")
+                print(response)
+            }
+            
             
             self.searchField.text = ""
             self.searchField.changeSearchState(isEditing: false)
