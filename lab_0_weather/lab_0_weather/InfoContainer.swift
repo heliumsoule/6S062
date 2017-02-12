@@ -10,6 +10,7 @@ import UIKit
 
 class InfoContainer: UIView {
 
+    let titleElement = GeneralField(text: "PLACEHOLDER")
     let weatherFields = Cons.weather.fields.map { (GeneralField(text: $0), GeneralField(text: $0)) }
     let anchorElement = UIView()
     
@@ -30,6 +31,11 @@ class InfoContainer: UIView {
             self.addSubview(desc)
         }
         
+        titleElement.textAlignment = .center
+        titleElement.textColor = Cons.color.clearColor
+        
+        self.addSubview(self.titleElement)
+        
         customLayout()
     }
     
@@ -42,16 +48,21 @@ class InfoContainer: UIView {
         self.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: self.anchorElement, sides: [.left, .top, .right], padding: 0))
         self.addConstraint(QLayoutConstraint.constantConstraint(view: self.anchorElement, attribute: .height, value: 0))
         
-        var topElement = self.anchorElement
+        self.addConstraints(QLayoutConstraint.paddingPositionConstraints(view: self.titleElement, sides: [.left, .right], padding: 15))
+        self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: self.anchorElement, lowerView: self.titleElement, spacing: 0))
+        
+        var topElement = self.titleElement
         
         weatherFields.forEach { name, desc in
+            
+            let vSpacing:CGFloat = name == weatherFields[0].0 ? 44 : 10
             
             self.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: name, side: .left, padding: 15))
             self.addConstraint(QLayoutConstraint.horizontalSpacingConstraint(leftView: name, rightView: desc, spacing: 40))
             self.addConstraint(QLayoutConstraint.paddingPositionConstraint(view: desc, side: .right, padding: 15))
             
-            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: name, spacing: 10))
-            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: desc, spacing: 10))
+            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: name, spacing: vSpacing))
+            self.addConstraint(QLayoutConstraint.verticalSpacingConstraint(upperView: topElement, lowerView: desc, spacing: vSpacing))
             
             
             if name == weatherFields.last!.0 {
@@ -67,6 +78,8 @@ class InfoContainer: UIView {
 extension InfoContainer: WeatherInfoProtocol {
     
     func updateWeatherInfo(city: String, zipcode: String, temperature: String, humidity: String, wind: String, visibility: String) {
+        self.titleElement.text = "\(city) - \(zipcode)"
+        
         self.weatherFields[0].1.text = temperature
         self.weatherFields[1].1.text = humidity
         self.weatherFields[2].1.text = wind
@@ -78,6 +91,7 @@ extension InfoContainer: WeatherInfoProtocol {
             
         }
 
+        self.titleElement.textColor = Cons.generalField.textColor
         
     }
     
