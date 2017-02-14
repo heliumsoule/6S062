@@ -12,6 +12,9 @@
 		DCBC745D1E53794F00EB0D80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCBC745C1E53794F00EB0D80 /* Assets.xcassets */; };
 		DCBC74601E53794F00EB0D80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBC745E1E53794F00EB0D80 /* LaunchScreen.storyboard */; };
 		DCBC74681E53799300EB0D80 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC74671E53799300EB0D80 /* Cons.swift */; };
+		DCBC746A1E537AE100EB0D80 /* QLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */; };
+		DCBC746C1E537B0500EB0D80 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC746B1E537B0500EB0D80 /* Controls.swift */; };
+		DCBC746E1E537BF000EB0D80 /* FieldName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC746D1E537BF000EB0D80 /* FieldName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		DCBC745F1E53794F00EB0D80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCBC74611E53794F00EB0D80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCBC74671E53799300EB0D80 /* Cons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cons.swift; path = ../Cons.swift; sourceTree = "<group>"; };
+		DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLayoutConstraint.swift; sourceTree = "<group>"; };
+		DCBC746B1E537B0500EB0D80 /* Controls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		DCBC746D1E537BF000EB0D80 /* FieldName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 				DCBC74551E53794F00EB0D80 /* AppDelegate.swift */,
 				DCBC74671E53799300EB0D80 /* Cons.swift */,
 				DCBC74571E53794F00EB0D80 /* MainViewController.swift */,
+				DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */,
+				DCBC746B1E537B0500EB0D80 /* Controls.swift */,
+				DCBC746D1E537BF000EB0D80 /* FieldName.swift */,
 				DCBC745C1E53794F00EB0D80 /* Assets.xcassets */,
 				DCBC745E1E53794F00EB0D80 /* LaunchScreen.storyboard */,
 				DCBC74611E53794F00EB0D80 /* Info.plist */,
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCBC74681E53799300EB0D80 /* Cons.swift in Sources */,
+				DCBC746E1E537BF000EB0D80 /* FieldName.swift in Sources */,
 				DCBC74581E53794F00EB0D80 /* MainViewController.swift in Sources */,
+				DCBC746C1E537B0500EB0D80 /* Controls.swift in Sources */,
+				DCBC746A1E537AE100EB0D80 /* QLayoutConstraint.swift in Sources */,
 				DCBC74561E53794F00EB0D80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
