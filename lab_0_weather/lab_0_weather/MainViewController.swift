@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.searchContainer.weatherDelegate = infoContainer
         
         let backgroundImage = UIImage(named: "Snow_Background")!.scaleToSize(scaleSize: Cons.screen.bounds.size)
@@ -43,11 +43,12 @@ class MainViewController: UIViewController {
         
         self.view.layer.addSublayer(self.imageLayer)
         self.view.layer.addSublayer(self.darkOverlay)
-    
+
         self.view.addSubview(self.infoContainer)
         self.view.addSubview(self.searchContainer)
         
         customLayout()
+
     }
 
     override func didReceiveMemoryWarning() {
