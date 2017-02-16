@@ -15,6 +15,9 @@
 		DCBC746A1E537AE100EB0D80 /* QLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */; };
 		DCBC746C1E537B0500EB0D80 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC746B1E537B0500EB0D80 /* Controls.swift */; };
 		DCBC746E1E537BF000EB0D80 /* FieldName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC746D1E537BF000EB0D80 /* FieldName.swift */; };
+		DCBC74701E561A6600EB0D80 /* AccuracyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC746F1E561A6600EB0D80 /* AccuracyControl.swift */; };
+		DCBC74721E561AF000EB0D80 /* PositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC74711E561AF000EB0D80 /* PositionButton.swift */; };
+		DCBC74741E561DAC00EB0D80 /* FieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBC74731E561DAC00EB0D80 /* FieldContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLayoutConstraint.swift; sourceTree = "<group>"; };
 		DCBC746B1E537B0500EB0D80 /* Controls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
 		DCBC746D1E537BF000EB0D80 /* FieldName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldName.swift; sourceTree = "<group>"; };
+		DCBC746F1E561A6600EB0D80 /* AccuracyControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyControl.swift; sourceTree = "<group>"; };
+		DCBC74711E561AF000EB0D80 /* PositionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionButton.swift; sourceTree = "<group>"; };
+		DCBC74731E561DAC00EB0D80 /* FieldContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +70,11 @@
 				DCBC74671E53799300EB0D80 /* Cons.swift */,
 				DCBC74571E53794F00EB0D80 /* MainViewController.swift */,
 				DCBC74691E537AE100EB0D80 /* QLayoutConstraint.swift */,
+				DCBC74731E561DAC00EB0D80 /* FieldContainer.swift */,
 				DCBC746B1E537B0500EB0D80 /* Controls.swift */,
 				DCBC746D1E537BF000EB0D80 /* FieldName.swift */,
+				DCBC746F1E561A6600EB0D80 /* AccuracyControl.swift */,
+				DCBC74711E561AF000EB0D80 /* PositionButton.swift */,
 				DCBC745C1E53794F00EB0D80 /* Assets.xcassets */,
 				DCBC745E1E53794F00EB0D80 /* LaunchScreen.storyboard */,
 				DCBC74611E53794F00EB0D80 /* Info.plist */,
@@ -144,11 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBC74721E561AF000EB0D80 /* PositionButton.swift in Sources */,
 				DCBC74681E53799300EB0D80 /* Cons.swift in Sources */,
 				DCBC746E1E537BF000EB0D80 /* FieldName.swift in Sources */,
 				DCBC74581E53794F00EB0D80 /* MainViewController.swift in Sources */,
+				DCBC74701E561A6600EB0D80 /* AccuracyControl.swift in Sources */,
 				DCBC746C1E537B0500EB0D80 /* Controls.swift in Sources */,
 				DCBC746A1E537AE100EB0D80 /* QLayoutConstraint.swift in Sources */,
+				DCBC74741E561DAC00EB0D80 /* FieldContainer.swift in Sources */,
 				DCBC74561E53794F00EB0D80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +315,7 @@
 				DCBC74661E53794F00EB0D80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

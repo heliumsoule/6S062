@@ -153,6 +153,7 @@
 				TargetAttributes = {
 					DC5CBCAE1E4E69690036EAF8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 42K23B473V;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -368,7 +369,9 @@
 			baseConfigurationReference = B357444045BF6106099A3946 /* Pods-lab_0_weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 42K23B473V;
 				INFOPLIST_FILE = lab_0_weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mit.lab-0-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,7 +384,9 @@
 			baseConfigurationReference = 7A18304085F122F07699C4ED /* Pods-lab_0_weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 42K23B473V;
 				INFOPLIST_FILE = lab_0_weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mit.lab-0-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";

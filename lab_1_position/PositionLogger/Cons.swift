@@ -28,6 +28,24 @@ struct Cons {
             "Accuracy",
             "Record"
         ]
+        
+        static let accuracies = [
+            "Cellular",
+            "WiFi",
+            "GPS"
+        ]
+
+        static let defaultColor = UIColor(red: CGFloat(33.0 / 255),
+                                          green: CGFloat(174.0 / 255),
+                                          blue: CGFloat(254.0 / 255),
+                                          alpha: 1.0)
+        static let highlightedColor = UIColor(red: CGFloat(29.0 / 255),
+                                              green: CGFloat(155.0 / 255),
+                                              blue: CGFloat(228.0 / 255),
+                                              alpha: 1.0)
+        static let tintColor = UIColor.white
+        
     }
+
     
 }
