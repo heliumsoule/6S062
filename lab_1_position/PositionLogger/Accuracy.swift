@@ -33,7 +33,7 @@ class Accuracy: UIView {
     
     func customLayout() {
         
-        self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.header, sides: [.left, .right, .top, .bottom], padding: 0))
+        self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.header, sides: [.left, .right, .top], padding: 0))
         self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.segmentedControl, sides: [.left, .right], padding: 0))
         
         self.addConstraint(AutoLayoutConstraints.verticalSpacingConstraint(upperView: self.header, lowerView: self.segmentedControl, spacing: 15))

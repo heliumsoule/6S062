@@ -17,6 +17,7 @@ class PositionControl: UISegmentedControl {
         self.frame = .zero
         
         self.backgroundColor = Cons.control.color
+        self.tintColor = Cons.control.tintColor
     }
     
     override init(frame: CGRect) {
