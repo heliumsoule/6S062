@@ -20,8 +20,7 @@ class PositionControl: UIView, PositionControlDelegate {
                 action.isSelected = index == selectedIndex ? true : false
                 action.isHighlighted = index == selectedIndex ? true : false
             }
-        }
-        
+        }        
     }
     
     init(items: [String]) {
