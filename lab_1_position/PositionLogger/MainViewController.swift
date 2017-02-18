@@ -9,11 +9,24 @@
 import UIKit
 
 class MainViewController: UIViewController {
+
+    let accuracy = Accuracy()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.cyan
+        self.view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(self.accuracy)
+        
+        customLayout()
+    }
+    
+    func customLayout() {
+        
+        self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.accuracy, sides: [.left, .right], padding: 15))
+        self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.accuracy, side: .top, padding: 64))
+        
     }
     
 }

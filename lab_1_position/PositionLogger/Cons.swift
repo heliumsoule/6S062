@@ -24,4 +24,19 @@ struct Cons {
         
     }
     
+    struct accuracy {
+        
+        static let header = "Choose an accuracy"
+        
+    }
+    
+    struct control {
+        
+        static let color = UIColor(red: CGFloat(96.0 / 255),
+                                   green: CGFloat(200.0 / 255),
+                                   blue: CGFloat(248.0 / 255),
+                                   alpha: 1.0)
+        
+    }
+    
 }

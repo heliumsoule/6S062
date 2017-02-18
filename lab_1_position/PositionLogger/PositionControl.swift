@@ -1,5 +1,5 @@
 //
-//  PositionLabel.swift
+//  PositionControl.swift
 //  PositionLogger
 //
 //  Created by Jing Lin on 2/18/17.
@@ -8,20 +8,19 @@
 
 import UIKit
 
-class PositionLabel: UILabel {
+class PositionControl: UISegmentedControl {
     
-    init(text: String) {
-        super.init(frame: .zero)
+    override init(items: [Any]?) {
+        super.init(items: items)
         
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.frame = .zero
         
-        self.text = text
-        
-        self.textAlignment = .center
-        self.font = Cons.positionLabel.font
-        self.textColor = Cons.positionLabel.textColor
-        self.numberOfLines = Cons.positionLabel.nLines
-        
+        self.backgroundColor = Cons.control.color
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
