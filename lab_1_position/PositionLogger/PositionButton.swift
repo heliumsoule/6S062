@@ -24,10 +24,7 @@ class PositionButton: UIButton {
         self.setTitle(title, for: .normal)
         self.titleLabel!.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
         
-        self.addTarget(self, action: #selector(PositionButton.changeStateCallback), for: .touchUpInside)
-//        self.addTarget(self, action: #selector(PositionButton.changeColorTouchDownCallback), for: .touchDown)
-//        self.addTarget(self, action: #selector(PositionButton.changeColorTouchOutCallback), for: .touchUpOutside)
-        
+        self.addTarget(self, action: #selector(PositionButton.changeStateCallback), for: .touchUpInside)        
         self.backgroundColor = Cons.control.buttonColor
     }
     
@@ -39,14 +36,6 @@ class PositionButton: UIButton {
             self.isSelected = true
             self.controlDelegate.selectedIndex = index
     }
-    
-//    func changeColorTouchDownCallback() {
-//        self.backgroundColor = Cons.control.highlightedColor
-//    }
-//    
-//    func changeColorTouchOutCallback() {
-//        self.backgroundColor = Cons.control.buttonColor
-//    }
     
     override var isHighlighted: Bool {
         didSet {

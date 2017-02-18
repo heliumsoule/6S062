@@ -17,7 +17,6 @@ class PositionControl: UIView, PositionControlDelegate {
     var selectedIndex: Int = 0 {
         didSet {
             for (index, action) in self.actions.enumerated() {
-//                action.backgroundColor = index == selectedIndex ? UIColor.green : Cons.control.buttonColor
                 action.isSelected = index == selectedIndex ? true : false
                 action.isHighlighted = index == selectedIndex ? true : false
             }
