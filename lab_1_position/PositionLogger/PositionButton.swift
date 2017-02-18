@@ -36,7 +36,8 @@ class PositionButton: UIButton {
     }
 
     func changeStateCallback() {
-        self.controlDelegate.selectedIndex = index
+            self.isSelected = true
+            self.controlDelegate.selectedIndex = index
     }
     
 //    func changeColorTouchDownCallback() {
@@ -51,8 +52,10 @@ class PositionButton: UIButton {
         didSet {
             if isHighlighted {
                 self.backgroundColor = Cons.control.highlightedColor
-            } else {
+            } else if !isSelected {
                 self.backgroundColor = Cons.control.buttonColor
+            } else {
+                self.backgroundColor = UIColor.green
             }
         }
     }

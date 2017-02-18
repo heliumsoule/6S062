@@ -23,10 +23,8 @@ class MainViewController: UIViewController {
     }
     
     func customLayout() {
-        
         self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.accuracy, sides: [.left, .right], padding: 15))
         self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.accuracy, side: .top, padding: 64))
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
