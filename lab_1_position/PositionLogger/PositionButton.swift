@@ -10,7 +10,11 @@ import UIKit
 
 class PositionButton: UIButton {
     
-    init(title: String) {
+    var controlDelegate:PositionControlDelegate!
+    let index:Int
+    
+    init(title: String, index: Int) {
+        self.index = index
         
         super.init(frame: .zero)
         
@@ -20,6 +24,10 @@ class PositionButton: UIButton {
         self.setTitle(title, for: .normal)
         self.titleLabel!.font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
         
+        self.addTarget(self, action: #selector(PositionButton.changeStateCallback), for: .touchUpInside)
+//        self.addTarget(self, action: #selector(PositionButton.changeColorTouchDownCallback), for: .touchDown)
+//        self.addTarget(self, action: #selector(PositionButton.changeColorTouchOutCallback), for: .touchUpOutside)
+        
         self.backgroundColor = Cons.control.buttonColor
     }
     
@@ -27,6 +35,18 @@ class PositionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func changeStateCallback() {
+        self.controlDelegate.selectedIndex = index
+    }
+    
+//    func changeColorTouchDownCallback() {
+//        self.backgroundColor = Cons.control.highlightedColor
+//    }
+//    
+//    func changeColorTouchOutCallback() {
+//        self.backgroundColor = Cons.control.buttonColor
+//    }
+    
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
@@ -38,3 +58,9 @@ class PositionButton: UIButton {
     }
     
 }
+
+
+
+
+
+

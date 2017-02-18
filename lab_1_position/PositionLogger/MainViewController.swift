@@ -28,5 +28,10 @@ class MainViewController: UIViewController {
         self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.accuracy, side: .top, padding: 64))
         
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
     
 }

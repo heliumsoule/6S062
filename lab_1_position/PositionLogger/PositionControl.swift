@@ -8,18 +8,34 @@
 
 import UIKit
 
-class PositionControl: UIView {
+class PositionControl: UIView, PositionControlDelegate {
     
     let leftElement = UIView()
     
     let actions:[PositionButton]
     
-    init(items: [String]) {
-        self.actions = items.map { PositionButton(title: $0) }
-        super.init(frame: .zero)
+    var selectedIndex: Int = 0 {
+        didSet {
+            for (index, action) in self.actions.enumerated() {
+//                action.backgroundColor = index == selectedIndex ? UIColor.green : Cons.control.buttonColor
+                action.isHighlighted = index == selectedIndex ? true : false
+            }
+        }
         
+    }
+    
+    init(items: [String]) {
+        self.actions = items.enumerated().map { (index, title) in PositionButton(title: title, index: index) }
+        defer {
+            self.selectedIndex = 1
+        }
+        
+        super.init(frame: .zero)
+
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leftElement.translatesAutoresizingMaskIntoConstraints = false
+
+        self.actions.forEach { $0.controlDelegate = self }
         
         self.layer.cornerRadius = 2.0
         self.clipsToBounds = true
