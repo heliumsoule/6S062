@@ -16,6 +16,14 @@
 		1E9E419E1E4226750050F787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CF19E1E3FEB5F004DE25F /* Main.storyboard */; };
 		1EDF548A1E40F13B00CB5BA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CF1801E3FEB04004DE25F /* ViewController.swift */; };
 		1EDF548B1E40F14100CB5BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CF17E1E3FEB04004DE25F /* AppDelegate.swift */; };
+		DC05961C1E58E13500057D70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961B1E58E13500057D70 /* MainViewController.swift */; };
+		DC0596201E58E24600057D70 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961F1E58E24600057D70 /* Cons.swift */; };
+		DC0596211E58E2E900057D70 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961F1E58E24600057D70 /* Cons.swift */; };
+		DC0596221E58E2EC00057D70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961B1E58E13500057D70 /* MainViewController.swift */; };
+		DC0596241E58E37400057D70 /* PositionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596231E58E37400057D70 /* PositionLabel.swift */; };
+		DC0596251E58E37400057D70 /* PositionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596231E58E37400057D70 /* PositionLabel.swift */; };
+		DC0596271E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */; };
+		DC0596281E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +47,10 @@
 		1E1CF1931E3FEB04004DE25F /* PositionLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionLoggerTests.swift; sourceTree = "<group>"; };
 		1E1CF1951E3FEB04004DE25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E1CF19E1E3FEB5F004DE25F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DC05961B1E58E13500057D70 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DC05961F1E58E24600057D70 /* Cons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cons.swift; sourceTree = "<group>"; };
+		DC0596231E58E37400057D70 /* PositionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionLabel.swift; sourceTree = "<group>"; };
+		DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +93,12 @@
 			isa = PBXGroup;
 			children = (
 				1E1CF17E1E3FEB04004DE25F /* AppDelegate.swift */,
+				DC05961B1E58E13500057D70 /* MainViewController.swift */,
+				DC05961F1E58E24600057D70 /* Cons.swift */,
 				1E1CF1801E3FEB04004DE25F /* ViewController.swift */,
 				1E1CF19E1E3FEB5F004DE25F /* Main.storyboard */,
+				DC0596231E58E37400057D70 /* PositionLabel.swift */,
+				DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */,
 				1E1CF1851E3FEB04004DE25F /* Assets.xcassets */,
 				1E1CF1871E3FEB04004DE25F /* LaunchScreen.storyboard */,
 				1E1CF18A1E3FEB04004DE25F /* Info.plist */,
@@ -203,8 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0596201E58E24600057D70 /* Cons.swift in Sources */,
+				DC0596271E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */,
+				DC05961C1E58E13500057D70 /* MainViewController.swift in Sources */,
 				1E1CF1811E3FEB04004DE25F /* ViewController.swift in Sources */,
 				1E1CF17F1E3FEB04004DE25F /* AppDelegate.swift in Sources */,
+				DC0596241E58E37400057D70 /* PositionLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,9 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0596211E58E2E900057D70 /* Cons.swift in Sources */,
 				1EDF548B1E40F14100CB5BA8 /* AppDelegate.swift in Sources */,
 				1EDF548A1E40F13B00CB5BA8 /* ViewController.swift in Sources */,
 				1E1CF1941E3FEB04004DE25F /* PositionLoggerTests.swift in Sources */,
+				DC0596221E58E2EC00057D70 /* MainViewController.swift in Sources */,
+				DC0596281E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */,
+				DC0596251E58E37400057D70 /* PositionLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
