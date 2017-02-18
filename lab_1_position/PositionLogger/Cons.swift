@@ -57,6 +57,15 @@ struct Cons {
                                    green: CGFloat(200.0 / 255),
                                    blue: CGFloat(248.0 / 255),
                                    alpha: 1.0)
+        static let buttonColor = UIColor(red: CGFloat(255.0 / 255),
+                                         green: CGFloat(163.0 / 255),
+                                         blue: CGFloat(0.0 / 255),
+                                         alpha: 1.0)
+        
+        static let highlightedColor = UIColor(red: CGFloat(230.0 / 255),
+                                              green: CGFloat(145.0 / 255),
+                                              blue: CGFloat(0.0 / 255),
+                                              alpha: 1.0)
         
         static let tintColor = UIColor(red: CGFloat(0x33/255.0),
                                        green: 0,

@@ -22,18 +22,22 @@
 		22DCF6C21E58F7900020CDC5 /* LogFileActionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DCF6C11E58F7900020CDC5 /* LogFileActionContainer.swift */; };
 		22DCF6C41E58F9D80020CDC5 /* LogFileEmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DCF6C31E58F9D80020CDC5 /* LogFileEmailButton.swift */; };
 		22DCF6C61E58F9DF0020CDC5 /* LogFileClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DCF6C51E58F9DF0020CDC5 /* LogFileClearButton.swift */; };
+		22F8725E1E59019A00933CFE /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8725D1E59019A00933CFE /* AutoLayoutConstraints.swift */; };
+		22F8725F1E59019F00933CFE /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8725D1E59019A00933CFE /* AutoLayoutConstraints.swift */; };
 		DC05961C1E58E13500057D70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961B1E58E13500057D70 /* MainViewController.swift */; };
 		DC0596201E58E24600057D70 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961F1E58E24600057D70 /* Cons.swift */; };
 		DC0596211E58E2E900057D70 /* Cons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961F1E58E24600057D70 /* Cons.swift */; };
 		DC0596221E58E2EC00057D70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05961B1E58E13500057D70 /* MainViewController.swift */; };
 		DC0596241E58E37400057D70 /* PositionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596231E58E37400057D70 /* PositionLabel.swift */; };
 		DC0596251E58E37400057D70 /* PositionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596231E58E37400057D70 /* PositionLabel.swift */; };
-		DC0596271E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */; };
-		DC0596281E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */; };
 		DC05962A1E58E49A00057D70 /* Accuracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596291E58E49A00057D70 /* Accuracy.swift */; };
 		DC05962B1E58E49A00057D70 /* Accuracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0596291E58E49A00057D70 /* Accuracy.swift */; };
 		DC05962D1E58E6DF00057D70 /* PositionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05962C1E58E6DF00057D70 /* PositionControl.swift */; };
 		DC05962E1E58E6DF00057D70 /* PositionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05962C1E58E6DF00057D70 /* PositionControl.swift */; };
+		DC0596301E58EB5900057D70 /* PositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05962F1E58EB5900057D70 /* PositionButton.swift */; };
+		DC0596311E58EB5900057D70 /* PositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC05962F1E58EB5900057D70 /* PositionButton.swift */; };
+		DC5B76A71E58F52B00F552B5 /* PositionControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5B76A61E58F52B00F552B5 /* PositionControlDelegate.swift */; };
+		DC5B76A81E58F52B00F552B5 /* PositionControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5B76A61E58F52B00F552B5 /* PositionControlDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,12 +66,14 @@
 		22DCF6C11E58F7900020CDC5 /* LogFileActionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileActionContainer.swift; sourceTree = "<group>"; };
 		22DCF6C31E58F9D80020CDC5 /* LogFileEmailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileEmailButton.swift; sourceTree = "<group>"; };
 		22DCF6C51E58F9DF0020CDC5 /* LogFileClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileClearButton.swift; sourceTree = "<group>"; };
+		22F8725D1E59019A00933CFE /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoLayoutConstraints.swift; path = ../AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 		DC05961B1E58E13500057D70 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC05961F1E58E24600057D70 /* Cons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cons.swift; sourceTree = "<group>"; };
 		DC0596231E58E37400057D70 /* PositionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionLabel.swift; sourceTree = "<group>"; };
-		DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraints.swift; sourceTree = "<group>"; };
 		DC0596291E58E49A00057D70 /* Accuracy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accuracy.swift; sourceTree = "<group>"; };
 		DC05962C1E58E6DF00057D70 /* PositionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionControl.swift; sourceTree = "<group>"; };
+		DC05962F1E58EB5900057D70 /* PositionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionButton.swift; sourceTree = "<group>"; };
+		DC5B76A61E58F52B00F552B5 /* PositionControlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionControlDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,17 +115,19 @@
 		1E1CF17D1E3FEB04004DE25F /* PositionLogger */ = {
 			isa = PBXGroup;
 			children = (
+				DC5B76A61E58F52B00F552B5 /* PositionControlDelegate.swift */,
 				1E1CF17E1E3FEB04004DE25F /* AppDelegate.swift */,
 				DC05961B1E58E13500057D70 /* MainViewController.swift */,
+				22F8725D1E59019A00933CFE /* AutoLayoutConstraints.swift */,
 				DC05961F1E58E24600057D70 /* Cons.swift */,
 				DC0596291E58E49A00057D70 /* Accuracy.swift */,
 				DC0596231E58E37400057D70 /* PositionLabel.swift */,
+				DC05962F1E58EB5900057D70 /* PositionButton.swift */,
 				DC05962C1E58E6DF00057D70 /* PositionControl.swift */,
 				22DCF6CB1E58FC8B0020CDC5 /* Record */,
 				22DCF6C71E58FC0A0020CDC5 /* LogFileActions */,
 				1E1CF1801E3FEB04004DE25F /* ViewController.swift */,
 				1E1CF19E1E3FEB5F004DE25F /* Main.storyboard */,
-				DC0596261E58E3F300057D70 /* AutoLayoutConstraints.swift */,
 				1E1CF1851E3FEB04004DE25F /* Assets.xcassets */,
 				1E1CF1871E3FEB04004DE25F /* LaunchScreen.storyboard */,
 				1E1CF18A1E3FEB04004DE25F /* Info.plist */,
@@ -261,8 +269,10 @@
 			files = (
 				DC0596201E58E24600057D70 /* Cons.swift in Sources */,
 				22DCF6C21E58F7900020CDC5 /* LogFileActionContainer.swift in Sources */,
-				DC0596271E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */,
 				22DCF6BE1E58ECAA0020CDC5 /* RecordActionContainer.swift in Sources */,
+				DC5B76A71E58F52B00F552B5 /* PositionControlDelegate.swift in Sources */,
+				22F8725E1E59019A00933CFE /* AutoLayoutConstraints.swift in Sources */,
+				DC0596301E58EB5900057D70 /* PositionButton.swift in Sources */,
 				DC05961C1E58E13500057D70 /* MainViewController.swift in Sources */,
 				22DCF6C41E58F9D80020CDC5 /* LogFileEmailButton.swift in Sources */,
 				22DCF6C01E58EDFA0020CDC5 /* RecordActionButton.swift in Sources */,
@@ -280,13 +290,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0596211E58E2E900057D70 /* Cons.swift in Sources */,
+				22F8725F1E59019F00933CFE /* AutoLayoutConstraints.swift in Sources */,
 				1EDF548B1E40F14100CB5BA8 /* AppDelegate.swift in Sources */,
 				220EE1F21E58FE36005E8FAA /* LogFileActionContainer.swift in Sources */,
+				DC0596311E58EB5900057D70 /* PositionButton.swift in Sources */,
+				DC5B76A81E58F52B00F552B5 /* PositionControlDelegate.swift in Sources */,
 				1EDF548A1E40F13B00CB5BA8 /* ViewController.swift in Sources */,
 				1E1CF1941E3FEB04004DE25F /* PositionLoggerTests.swift in Sources */,
 				DC05962B1E58E49A00057D70 /* Accuracy.swift in Sources */,
 				DC0596221E58E2EC00057D70 /* MainViewController.swift in Sources */,
-				DC0596281E58E3F300057D70 /* AutoLayoutConstraints.swift in Sources */,
 				DC0596251E58E37400057D70 /* PositionLabel.swift in Sources */,
 				DC05962E1E58E6DF00057D70 /* PositionControl.swift in Sources */,
 			);

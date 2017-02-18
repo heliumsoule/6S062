@@ -17,10 +17,7 @@ class Accuracy: UIView {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.segmentedControl.selectedSegmentIndex = 0
-        self.segmentedControl.addTarget(self, action: #selector(Accuracy.controlCallback), for: .touchUpInside)
-        
+            
         self.addSubview(self.segmentedControl)
         self.addSubview(self.header)
         
@@ -32,7 +29,6 @@ class Accuracy: UIView {
     }
     
     func customLayout() {
-        
         self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.header, sides: [.left, .right, .top], padding: 0))
         self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.segmentedControl, sides: [.left, .right], padding: 0))
         
