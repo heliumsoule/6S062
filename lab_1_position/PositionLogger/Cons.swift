@@ -15,10 +15,8 @@ struct Cons {
     }
     
     struct positionLabel {
-//        static let font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
-//        static let textColor = UIColor.black.withAlphaComponent(0.7)
-        static let font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightMedium)
-        static let textColor = UIColor.white
+        static let font = UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightThin)
+        static let textColor = UIColor.black
         static let nLines = 1
     }
     
@@ -51,14 +49,13 @@ struct Cons {
                                    green: CGFloat(200.0 / 255),
                                    blue: CGFloat(248.0 / 255),
                                    alpha: 1.0)
-        static let buttonColor = UIColor(red: CGFloat(255.0 / 255),
-                                         green: CGFloat(163.0 / 255),
-                                         blue: CGFloat(0.0 / 255),
+        static let buttonColor = UIColor(red: CGFloat(0.0 / 255),
+                                         green: CGFloat(204.0 / 255),
+                                         blue: CGFloat(255.0 / 255),
                                          alpha: 1.0)
-        
-        static let highlightedColor = UIColor(red: CGFloat(230.0 / 255),
-                                              green: CGFloat(145.0 / 255),
-                                              blue: CGFloat(0.0 / 255),
+        static let highlightedColor = UIColor(red: CGFloat(66.0 / 255),
+                                              green: CGFloat(180.0 / 255),
+                                              blue: CGFloat(230.0 / 255),
                                               alpha: 1.0)
     }
     
