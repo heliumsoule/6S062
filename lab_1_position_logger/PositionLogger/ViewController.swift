@@ -104,6 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     // TODO: implement me!
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        self.logLineToDataFile("Time,Lat,Lon,Altitude,Accuracy,Heading,Speed,Battery\n")
+        
         locations.forEach { loc in
             
             self.logLineToDataFile("\(loc.timestamp.timeIntervalSince1970)," +
