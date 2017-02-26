@@ -98,15 +98,15 @@
 		DC5CBCB11E4E69690036EAF8 /* lab_0_weather */ = {
 			isa = PBXGroup;
 			children = (
-				DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */,
 				DC5CBCB21E4E69690036EAF8 /* AppDelegate.swift */,
 				DC5CBCD81E502D4E0036EAF8 /* Router.swift */,
-				DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */,
 				DC5CBCDE1E5061140036EAF8 /* WeatherInfoProtocol.swift */,
 				DC5CBCDA1E50445A0036EAF8 /* API.swift */,
 				DC5CBCB41E4E69690036EAF8 /* MainViewController.swift */,
 				DC5CBCCC1E4ED6F50036EAF8 /* Extensions.swift */,
+				DC5CBCD01E4EEAE50036EAF8 /* SearchActionContainer.swift */,
 				DC5CBCCE1E4EDDF50036EAF8 /* SearchActionButton.swift */,
+				DC5CBCDC1E5045A90036EAF8 /* SearchField.swift */,
 				DC5CBCC41E4E6BBD0036EAF8 /* GeneralField.swift */,
 				DC5CBCC81E4E6DA80036EAF8 /* InfoContainer.swift */,
 				DC5CBCCA1E4E730A0036EAF8 /* QLayoutConstraints.swift */,
