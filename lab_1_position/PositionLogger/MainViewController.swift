@@ -17,12 +17,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = UIColor.white
         
         self.view.addSubview(self.accuracy)
-        
         self.view.addSubview(self.record)
-        
         self.view.addSubview(self.logFileActions)
         
         customLayout()
@@ -31,18 +29,19 @@ class MainViewController: UIViewController {
     func customLayout() {
         self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.accuracy, sides: [.left, .right], padding: 15))
         self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.accuracy, side: .top, padding: 64))
+        
+        self.view.addConstraint(AutoLayoutConstraints.verticalSpacingConstraint(upperView: self.accuracy, lowerView: self.record, spacing: 20))
+        self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.record, sides: [.left, .right], padding: 15))
+        
+        self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.logFileActions, sides: [.left, .right], padding: 15))
+        self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.logFileActions, side: .bottom, padding: 30))
+        self.view.addConstraint(AutoLayoutConstraints.constantConstraint(view: self.logFileActions, attribute: .height, value: 40))
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.view.addConstraint(AutoLayoutConstraints.verticalSpacingConstraint(upperView: self.accuracy, lowerView: self.record, spacing: 20))
-        self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.record, sides: [.left, .right], padding: 15))
         
-//        self.view.addConstraint(AutoLayoutConstraints.verticalSpacingConstraint(upperView: <#T##UIView#>, lowerView: <#T##UIView#>, spacing: <#T##CGFloat#>))
-        self.view.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.logFileActions, sides: [.left, .right], padding: 15))
-        self.view.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.logFileActions, side: .bottom, padding: 30))
-        self.view.addConstraint(AutoLayoutConstraints.constantConstraint(view: self.logFileActions, attribute: .height, value: 40))
     }
     
 }

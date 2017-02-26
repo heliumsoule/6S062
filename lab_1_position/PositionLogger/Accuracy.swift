@@ -11,6 +11,7 @@ import UIKit
 class Accuracy: UIView {
     
     let header = PositionLabel(text: Cons.accuracy.header)
+//    let segmentedControl = PosControl(items: ["Cellular", "WiFi", "GPS"])
     let segmentedControl = PositionControl(items: ["Cellular", "WiFi", "GPS"])
     
     init() {
@@ -33,7 +34,7 @@ class Accuracy: UIView {
         self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.segmentedControl, sides: [.left, .right], padding: 0))
         
         self.addConstraint(AutoLayoutConstraints.verticalSpacingConstraint(upperView: self.header, lowerView: self.segmentedControl, spacing: 15))
-        self.addConstraint(AutoLayoutConstraints.constantConstraint(view: self.segmentedControl, attribute: .height, value: 40))
+        self.addConstraint(AutoLayoutConstraints.constantConstraint(view: self.segmentedControl, attribute: .height, value: 36.0))
         self.addConstraint(AutoLayoutConstraints.paddingPositionConstraint(view: self.segmentedControl, side: .bottom, padding: 0))
     }
     
