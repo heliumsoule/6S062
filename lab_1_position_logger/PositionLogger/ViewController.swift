@@ -85,18 +85,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
 
     // TODO: implement me!
     func startRecordingLocationWithAccuracy(_ acc: LocationAccuracy) {
-        // your code goes here
+        switch acc {
+        case .GPS:
+            self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        case .WiFi:
+            self.locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        case .Cellular:
+            self.locationManager?.desiredAccuracy = kCLLocationAccuracyKilometer
+        }
     }
 
     // TODO: implement me!
     func stopRecordingLocationWithAccuracy() {
-        // your code goes here
+        self.locationManager?.stopUpdatingLocation()
     }
 
     // CLLocationManagerDelegate
     // TODO: implement me!
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // your code goes here
+//        self.logLineToDataFile("Time,Lat,Lon,Altitude,Accuracy,Heading,Speed,Battery\n")
+        locations.forEach { loc in
+            
+            self.logLineToDataFile("\(loc.timestamp.timeIntervalSince1970)," +
+                                   "\(loc.coordinate.latitude)," +
+                                   "\(loc.coordinate.longitude)," +
+                                   "\(loc.altitude)," +
+                                   "\(loc.horizontalAccuracy)," +
+                                   "\(loc.course)," +
+                                   "\(loc.speed)," +
+                                   "\(UIDevice.current.batteryLevel)")
+        }
     }
 
     // UI actions
