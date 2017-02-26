@@ -22,7 +22,7 @@ class LogFileActionContainer: UIView {
         
         //        self.addSubview(self.header)
         
-        self.backgroundColor = UIColor.green
+//        self.backgroundColor = UIColor.green
         
         self.addSubview(emailButton)
         self.addSubview(clearButton)
@@ -35,9 +35,13 @@ class LogFileActionContainer: UIView {
     }
     
     func customLayout() {
-//        self.addConstraint(AutoLayoutConstraints.horizontalAlignConstraint(firstView: emailButton, secondView: clearButton))
-        self.addConstraint(AutoLayoutConstraints.horizontalSpacingConstraint(leftView: emailButton, rightView: clearButton, spacing: 10))
+        self.addConstraint(AutoLayoutConstraints.horizontalAlignConstraint(firstView: self.emailButton, secondView: self.clearButton))
+        self.addConstraint(AutoLayoutConstraints.horizontalSpacingConstraint(leftView: self.emailButton, rightView: self.clearButton, spacing: 10))
         
+        self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.emailButton, sides: [.left, .top, .bottom], padding: 0))
+        self.addConstraints(AutoLayoutConstraints.paddingPositionConstraints(view: self.clearButton, sides: [.right, .top, .bottom], padding: 0))
+        
+        self.addConstraint(AutoLayoutConstraints.equalConstraint(firstView: self.emailButton, secondView: self.clearButton, attribute: .width))
     }
     
 }

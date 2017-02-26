@@ -19,6 +19,7 @@ class LogFileEmailButton: UIButton {
         self.setTitleColor(Cons.recordButton.textColor, for: .normal)
         self.setTitle("Email", for: .normal)
         
+        self.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
         
     }
     
