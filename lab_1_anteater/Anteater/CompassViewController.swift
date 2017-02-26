@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-extension Int {
+extension Double {
     var degreesToRadians: Double { return Double(self) * .pi / 180 }
     var radiansToDegrees: Double { return Double(self) * 180 / .pi }
 }
@@ -24,8 +24,10 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
  
     let locationManager = CLLocationManager()
     var lastCoord, userCoord, targetCoord: CLLocationCoordinate2D?
-    var curHeading = 0.0, lastHeading = 0.0, lastMagHeading = 0.0
+    var currHeading = 0.0, lastHeading = 0.0, lastMagHeading = 0.0
     var scale: CGFloat = 0.0
+    
+    var antIndex:Int = 0
     
     // MARK: Outlets and Actions
     
@@ -34,7 +36,7 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
     @IBOutlet weak var needle: UIImageView?
     @IBOutlet weak var headingLabel: UILabel?
     @IBOutlet weak var distanceLabel: UILabel?
-
+    
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -83,19 +85,27 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
     
     // TODO: implement me
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // your code here
+        self.antIndex = row
+        
+        pointNeedle()
     }
     
     // MARK: - CoreLocation
     
     // TODO: implement me
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        // your code here
+        self.lastMagHeading = newHeading.trueHeading
+        self.lastHeading = self.currHeading
+        
+        pointNeedle()
     }
     
     // TODO: implement me
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // your code here
+        self.lastCoord = self.userCoord
+        self.userCoord = locations.last!.coordinate
+        
+        pointNeedle()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -107,4 +117,44 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
         print(status)
         print(status.rawValue)
     }
+
+    func calculateThetaOne(lat_one: Double, lat_two: Double, lon_one: Double, lon_two: Double) -> Double {
+//        atan2(sin(lon2-lon1)*cos(lat2), cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon2-lon1)
+        
+        return atan2(sin(lon_two - lon_one) * cos(lat_two),
+                     cos(lat_one) * sin(lat_two) - sin(lat_one) * cos(lat_two) * cos(lon_two - lon_one))
+    }
+    
+    func calculateDistance(lat_one: Double, lat_two: Double, lon_one: Double, lon_two: Double) -> Double {
+        let r = 6371.0
+        
+        return 2.0 * r * asin(sqrt(sin((lat_two - lat_one) / 2.0) * sin((lat_two - lat_one) / 2.0) +
+                                 cos(lat_one) * cos(lat_two) * sin((lon_two - lon_one) / 2.0) * sin((lon_two - lon_one) / 2.0)))
+        
+    }
+    
+    func pointNeedle() {
+        if let coord = self.userCoord {
+            if let anthills = self.anthills {
+                let anthill = anthills[self.antIndex] as! [String: Any]
+                let antLat = anthill["lat"] as! Double
+                let antLon = anthill["lon"] as! Double
+                
+                let thetaOne = calculateThetaOne(lat_one: coord.latitude.degreesToRadians,
+                                                 lat_two: coord.longitude.degreesToRadians,
+                                                 lon_one: antLat.degreesToRadians,
+                                                 lon_two: antLon.degreesToRadians)
+                let distance = calculateDistance(lat_one: coord.latitude.degreesToRadians,
+                                                 lat_two: coord.longitude.degreesToRadians,
+                                                 lon_one: antLat.degreesToRadians,
+                                                 lon_two: antLon.degreesToRadians)
+                
+                self.currHeading = thetaOne - self.lastMagHeading
+                self.needle!.transform = CGAffineTransform(rotationAngle: CGFloat(self.currHeading))
+                self.headingLabel!.text = "\(self.currHeading)"
+                self.distanceLabel!.text = "\(distance)"
+            }
+        }
+    }
+   
 }
