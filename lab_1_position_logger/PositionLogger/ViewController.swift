@@ -85,6 +85,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
 
     // TODO: implement me!
     func startRecordingLocationWithAccuracy(_ acc: LocationAccuracy) {
+        self.locationManager?.startUpdatingLocation()
+        self.locationManager?.startUpdatingHeading()
         switch acc {
         case .GPS:
             self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -103,7 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     // CLLocationManagerDelegate
     // TODO: implement me!
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        self.logLineToDataFile("Time,Lat,Lon,Altitude,Accuracy,Heading,Speed,Battery\n")
+        
         locations.forEach { loc in
             
             self.logLineToDataFile("\(loc.timestamp.timeIntervalSince1970)," +
@@ -113,12 +115,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
                                    "\(loc.horizontalAccuracy)," +
                                    "\(loc.course)," +
                                    "\(loc.speed)," +
-                                   "\(UIDevice.current.batteryLevel)")
+                                   "\(UIDevice.current.batteryLevel)\n")
         }
     }
 
     // UI actions
     @IBAction func hitRecordStopButton(_ sender: UIButton) {
+        
         if(!self.isRecording) {
             self.accuracyControl.isEnabled = false
             sender.setTitle("Stop", for: UIControlState.normal)
