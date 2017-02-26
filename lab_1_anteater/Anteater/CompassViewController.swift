@@ -151,8 +151,8 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
                 
                 self.currHeading = thetaOne - self.lastMagHeading
                 self.needle!.transform = CGAffineTransform(rotationAngle: CGFloat(self.currHeading))
-                self.headingLabel!.text = "\(self.currHeading)"
-                self.distanceLabel!.text = "\(distance)"
+                self.headingLabel!.text = String(format: "%.1f", self.currHeading.radiansToDegrees)
+                self.distanceLabel!.text = String(format: "%.1f km", distance)
             }
         }
     }
