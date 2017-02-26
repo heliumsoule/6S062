@@ -387,7 +387,7 @@
 				TargetAttributes = {
 					DE235C3A1D4FBA3000EC5467 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 37ZQDPD2L9;
+						DevelopmentTeam = JD5Y99D857;
 						DevelopmentTeamName = "Justin Anderson (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
@@ -563,7 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37ZQDPD2L9;
+				DEVELOPMENT_TEAM = JD5Y99D857;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -575,7 +575,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.Anteater;
+				PRODUCT_BUNDLE_IDENTIFIER = sam.edu.mit.Anteater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -585,7 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37ZQDPD2L9;
+				DEVELOPMENT_TEAM = JD5Y99D857;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -597,7 +597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.Anteater;
+				PRODUCT_BUNDLE_IDENTIFIER = sam.edu.mit.Anteater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
