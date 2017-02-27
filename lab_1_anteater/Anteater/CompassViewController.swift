@@ -122,7 +122,7 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
 //        atan2(sin(lon2-lon1)*cos(lat2), cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon2-lon1)
         
         return atan2(sin(lon_two - lon_one) * cos(lat_two),
-                     cos(lat_one) * sin(lat_two) - sin(lat_one) * cos(lat_two) * cos(lon_two - lon_one))
+                     cos(lat_one) * sin(lat_two) - sin(lat_one) * cos(lat_two) * cos(lon_two - lon_one)).radiansToDegrees
     }
     
     func calculateDistance(lat_one: Double, lat_two: Double, lon_one: Double, lon_two: Double) -> Double {
@@ -141,17 +141,18 @@ class CompassViewController: UIViewController, CLLocationManagerDelegate, UIPick
                 let antLon = anthill["lon"] as! Double
                 
                 let thetaOne = calculateThetaOne(lat_one: coord.latitude.degreesToRadians,
-                                                 lat_two: coord.longitude.degreesToRadians,
-                                                 lon_one: antLat.degreesToRadians,
+                                                 lat_two: antLat.degreesToRadians,
+                                                 lon_one: coord.longitude.degreesToRadians,
                                                  lon_two: antLon.degreesToRadians)
                 let distance = calculateDistance(lat_one: coord.latitude.degreesToRadians,
-                                                 lat_two: coord.longitude.degreesToRadians,
-                                                 lon_one: antLat.degreesToRadians,
+                                                 lat_two: antLat.degreesToRadians,
+                                                 lon_one: coord.longitude.degreesToRadians,
                                                  lon_two: antLon.degreesToRadians)
                 
-                self.currHeading = thetaOne - self.lastMagHeading
-                self.needle!.transform = CGAffineTransform(rotationAngle: CGFloat(self.currHeading))
-                self.headingLabel!.text = String(format: "%.1f", self.currHeading.radiansToDegrees)
+                self.currHeading = (thetaOne - self.lastMagHeading)
+                self.currHeading = self.currHeading < 0 ? self.currHeading + 360 : self.currHeading
+                self.needle!.transform = CGAffineTransform(rotationAngle: CGFloat(self.currHeading.degreesToRadians))
+                self.headingLabel!.text = String(format: "%.1f", self.currHeading)
                 self.distanceLabel!.text = String(format: "%.1f km", distance)
             }
         }
