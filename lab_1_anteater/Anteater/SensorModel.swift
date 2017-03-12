@@ -97,6 +97,7 @@ class SensorModel {
     var delegate: SensorModelDelegate?
     var sensorReadings: [ReadingType: [Reading]] = [.Humidity: [], .Temperature: []]
     var activeHill: Hill?
+    var activePeripheral: CBPeripheral?
     
     let ble = BLE()
     
@@ -109,21 +110,26 @@ class SensorModel {
 extension SensorModel: BLEDelegate {
     
     func ble(didUpdateState state: BLEState) {
-        if (state == BLEState.poweredOn) {
+        if state == BLEState.poweredOn {
             _ = ble.startScanning(timeout: 1)
         }
     }
     
     func ble(didDiscoverPeripheral peripheral: CBPeripheral) {
-        
+        _ = ble.connectToPeripheral(peripheral)
     }
     
     func ble(didConnectToPeripheral peripheral: CBPeripheral) {
+        self.activeHill = Hill(name: peripheral.name!)
+        self.activePeripheral = peripheral
         
+        self.delegate?.sensorModel(self, didChangeActiveHill: self.activeHill)
     }
     
     func ble(didDisconnectFromPeripheral peripheral: CBPeripheral) {
-        
+        if peripheral == self.activePeripheral {
+            self.delegate?.sensorModel(self, didChangeActiveHill: nil)
+        }
     }
     
     func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?) {
