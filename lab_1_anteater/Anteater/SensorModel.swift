@@ -110,7 +110,7 @@ extension SensorModel: BLEDelegate {
     
     func ble(didUpdateState state: BLEState) {
         if (state == BLEState.poweredOn) {
-            ble.startScanning(timeout: 1)
+            _ = ble.startScanning(timeout: 1)
         }
     }
     
