@@ -98,6 +98,46 @@ class SensorModel {
     var sensorReadings: [ReadingType: [Reading]] = [.Humidity: [], .Temperature: []]
     var activeHill: Hill?
     
+    let ble = BLE()
+    
     init() {
+        ble.delegate = self
     }
+    
 }
+
+extension SensorModel: BLEDelegate {
+    
+    func ble(didUpdateState state: BLEState) {
+        if (state == BLEState.poweredOn) {
+            ble.startScanning(timeout: 1)
+        }
+    }
+    
+    func ble(didDiscoverPeripheral peripheral: CBPeripheral) {
+        
+    }
+    
+    func ble(didConnectToPeripheral peripheral: CBPeripheral) {
+        
+    }
+    
+    func ble(didDisconnectFromPeripheral peripheral: CBPeripheral) {
+        
+    }
+    
+    func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?) {
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
