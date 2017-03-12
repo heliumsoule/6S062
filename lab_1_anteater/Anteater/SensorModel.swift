@@ -99,6 +99,8 @@ class SensorModel {
     var activeHill: Hill?
     var activePeripheral: CBPeripheral?
     
+    var readingBuffer: [String] = []
+    
     let ble = BLE()
     
     init() {
@@ -133,6 +135,10 @@ extension SensorModel: BLEDelegate {
     }
     
     func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?) {
+        let str = String(data: data!, encoding: String.Encoding.ascii)!
+//        let val = NSString(string: str).doubleValue
+        
+        
         
     }
     
