@@ -195,6 +195,7 @@ extension SensorModel: BLEDelegate {
             let t = packetData.endIndex
             self.unfinishedReading = packetData.substring(with: s..<t)
         }
+        // now call didReceiveReadings
         self.delegate?.sensorModel(self, didReceiveReadings: (self.activeHill?.readings)!, forHill: self.activeHill)
     }
 }
