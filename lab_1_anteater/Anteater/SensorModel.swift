@@ -99,7 +99,7 @@ class SensorModel {
     var activeHill: Hill?
     var activePeripheral: CBPeripheral?
     
-    var readingBuffer: [String] = []
+    var unfinishedReading = ""
     
     let ble = BLE()
     
@@ -113,7 +113,7 @@ extension SensorModel: BLEDelegate {
     
     func ble(didUpdateState state: BLEState) {
         if state == BLEState.poweredOn {
-            _ = ble.startScanning(timeout: 1)
+            _ = ble.startScanning(timeout: 100)
         }
     }
     
@@ -131,14 +131,73 @@ extension SensorModel: BLEDelegate {
     func ble(didDisconnectFromPeripheral peripheral: CBPeripheral) {
         if peripheral == self.activePeripheral {
             self.delegate?.sensorModel(self, didChangeActiveHill: nil)
+            _ = ble.startScanning(timeout: 100)
         }
     }
     
     func ble(_ peripheral: CBPeripheral, didReceiveData data: Data?) {
-        let str = String(data: data!, encoding: String.Encoding.ascii)!
-//        let val = NSString(string: str).doubleValue
         
+        // current received packet
+        let packetData = String(data: data!, encoding: String.Encoding.ascii)!
         
+        var start = 0
+        var wasError = false
+        
+        // iterate through characters
+        for i in 0...(packetData.characters.count-1) {
+            if wasError {
+                // there was previously an error, ignore it, erase previous data, move on
+                self.unfinishedReading = ""
+                wasError = false
+            } else {
+                switch packetData[packetData.index(packetData.startIndex, offsetBy: i)] {
+                case "H", "T":
+                    // if character is H or T, start of a new reading
+                    start = i
+                case "E":
+                    // if character is E, there was an error. indicate it
+                    wasError = true
+                case "D":
+                    let s = packetData.index(packetData.startIndex, offsetBy: start)
+                    let t = packetData.index(packetData.startIndex, offsetBy: i)
+                    
+                    // currentReading is combination of whatever unfinished reading there was from previous packet,
+                    // plus everything from the previous "start" index to the current index.
+                    let currentReading = self.unfinishedReading + packetData.substring(with: s..<t)
+
+                    var currentType: ReadingType
+                    if currentReading[currentReading.startIndex] == "H" {
+                        currentType = ReadingType.Humidity
+                    } else if currentReading[currentReading.startIndex] == "T" {
+                        currentType = ReadingType.Temperature
+                    } else {
+                        // should only reach here in case of an error/bug
+                        currentType = ReadingType.Unknown
+                    }
+                    
+                    
+                    let readingValueStartIndex = currentReading.index(currentReading.startIndex, offsetBy: 1)
+                    let readingValueEndIndex = currentReading.endIndex
+                    let readingValue = NSString(string: currentReading.substring(with: readingValueStartIndex..<readingValueEndIndex)).doubleValue
+                    
+                    self.activeHill?.readings.append(Reading(type: currentType, value: readingValue, sensorId: peripheral.name))
+                    
+                    // recorded reading to activeHill.readings, reset and clear for next reading
+                    self.unfinishedReading = ""
+                    start = -1
+                default:
+                    break
+                }
+            }
+        }
+        if start != -1 {
+            // then there must be an unfinished reading
+            let s = packetData.index(packetData.startIndex, offsetBy: start)
+            let t = packetData.endIndex
+            self.unfinishedReading = packetData.substring(with: s..<t)
+        }
+        
+        self.delegate?.sensorModel(self, didReceiveReadings: (self.activeHill?.readings)!, forHill: self.activeHill)
         
     }
     
