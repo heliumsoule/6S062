@@ -175,7 +175,6 @@ extension SensorModel: BLEDelegate {
                         currentType = ReadingType.Unknown
                     }
                     
-                    
                     let readingValueStartIndex = currentReading.index(currentReading.startIndex, offsetBy: 1)
                     let readingValueEndIndex = currentReading.endIndex
                     let readingValue = NSString(string: currentReading.substring(with: readingValueStartIndex..<readingValueEndIndex)).doubleValue
@@ -196,11 +195,8 @@ extension SensorModel: BLEDelegate {
             let t = packetData.endIndex
             self.unfinishedReading = packetData.substring(with: s..<t)
         }
-        
         self.delegate?.sensorModel(self, didReceiveReadings: (self.activeHill?.readings)!, forHill: self.activeHill)
-        
     }
-    
 }
 
 
