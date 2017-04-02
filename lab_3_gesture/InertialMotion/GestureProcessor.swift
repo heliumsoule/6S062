@@ -189,6 +189,9 @@ class GestureProcessor {
         
         // -- TASK 3A --
         // Estimate left-right, up-down axes by averaging orientation over time:
+        // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
+        // Then find the rotation matrix most similar to the resulting sum.
+        
         var M = GLKMatrix3()
         var average:[Float] = [Float](repeatElement(0, count: 9))
         
@@ -197,12 +200,17 @@ class GestureProcessor {
                 average[index] += sample.attitudeM[index]
             }
         }
-        average.map { $0 / Float(average.count) }
         
-        // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
-        // Then find the rotation matrix most similar to the resulting sum.
+        average = average.map { $0 / Float(average.count) }
+        let averageMatrix = GLKMatrix3(m: (average[0], average[1], average[2],
+                                           average[3], average[4], average[5],
+                                           average[6], average[7], average[8]))
         
-        
+        do {
+            M = try nearestRotation(averageMatrix)
+        } catch {
+            print("Shouldn't be happening")
+        }
         
         // -- TASK 3B --
         // Project points to 2D:
@@ -210,7 +218,20 @@ class GestureProcessor {
         // and copy the transformed x and y coordinates, along with the timestamp,
         // to samples2D[i].
         
+        samples3D.enumerated().forEach { index, sample in
+            let location = GLKMatrix3MultiplyVector3(M, sample.location)
+            samples2D[index].x = Double(location.x)
+            samples2D[index].y = Double(location.y)
+            samples2D[index].t = sample.t
+        }
+        
         // Apply 2-D solution
         processGesture2D(samples: samples2D, minSize: minSize)
     }
 }
+
+
+
+
+
+
