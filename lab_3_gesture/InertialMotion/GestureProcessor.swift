@@ -81,6 +81,22 @@ class GestureProcessor {
         // Compute size, clippedSize
         // Rescale points to lie in [0,1] x [0,1]
         
+        samples.forEach {
+            minX = min($0.x, minX)
+            maxX = max($0.x, maxX)
+            minY = min($0.y, minY)
+            maxY = max($0.y, maxY)
+        }
+        size = max(maxX - minX, maxY - minY)
+        clippedSize = max(size, minSize)
+        samples.forEach {
+            rescaledSamples.append(Sample2D(x: ($0.x - minX) / maxX,
+                                            y: ($0.y - minY) / maxY,
+                                            t: $0.t))
+        }
+        
+        print("The size is \(size) the clipped size is \(clippedSize)")
+        
         // -- TASK 1B --
         var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
         // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
