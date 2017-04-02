@@ -164,7 +164,7 @@
 				TargetAttributes = {
 					DEA06C321E799EF000127343 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 37ZQDPD2L9;
+						DevelopmentTeam = JD5Y99D857;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -342,11 +342,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37ZQDPD2L9;
+				DEVELOPMENT_TEAM = JD5Y99D857;
 				INFOPLIST_FILE = InertialMotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jander.InertialMotion;
+				PRODUCT_BUNDLE_IDENTIFIER = sjs.InertialMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "InertialMotion/InertialMotion-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -358,11 +358,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 37ZQDPD2L9;
+				DEVELOPMENT_TEAM = JD5Y99D857;
 				INFOPLIST_FILE = InertialMotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jander.InertialMotion;
+				PRODUCT_BUNDLE_IDENTIFIER = sjs.InertialMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "InertialMotion/InertialMotion-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

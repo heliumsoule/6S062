@@ -79,6 +79,8 @@ class Gesture3DViewController: RibbonViewController, GestureProcessorDelegate {
             return
         }
         
+        let alpha = 0.5
+        
         let dt = motionManager.deviceMotionUpdateInterval
         let attitude = GLKQuaternionFromCMQuaternion(motion.attitude.quaternion)
         let userAcceleration = GLKVector3FromCMAcceleration(motion.userAcceleration)
@@ -86,9 +88,14 @@ class Gesture3DViewController: RibbonViewController, GestureProcessorDelegate {
         // -- TASK 2A --
         var acceleration: GLKVector3 = userAcceleration
         // rotate acceleration from instantaneous coordinates into persistent coordinates
+        acceleration = GLKVector3MultiplyScalar(acceleration, -1.0)
+        acceleration = GLKQuaternionRotateVector3(attitude, acceleration)
 
         // -- TASK 2B --
         // integrate acceleration into velocity and velocity into position
+        self.velocity = GLKVector3Add(GLKVector3MultiplyScalar(self.velocity, Float(exp(-0.5*alpha*dt))), GLKVector3MultiplyScalar(acceleration, Float(0.5*dt)))
+        self.position = GLKVector3Add(GLKVector3MultiplyScalar(self.position, Float(exp(-1*alpha*dt))), GLKVector3MultiplyScalar(self.velocity, Float(dt)))
+        self.velocity = GLKVector3Add(GLKVector3MultiplyScalar(self.velocity, Float(exp(-0.5*alpha*dt))), GLKVector3MultiplyScalar(acceleration, Float(0.5*dt)))
         
         // -- TASK 2C --
         // apply your choice of braking to velocity and position to stabilize the integration loop
