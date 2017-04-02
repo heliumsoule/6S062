@@ -95,13 +95,52 @@ class GestureProcessor {
                                             t: $0.t))
         }
         
-        print("The size is \(size) the clipped size is \(clippedSize)")
-        
         // -- TASK 1B --
         var features: [Double] = [Double](repeatElement(0.0, count: N_FEATURES))
         // Classify each point according to which zone of a 3x3 Tic-Tac-Toe board it would fall in
         // Compute the time spent in each zone and the distance traveled horizontally and vertically
-
+        let y_one_third:Double = (maxY - minY) / 3.0
+        let y_two_third:Double = (maxY - minY) * 2 / 3.0
+        let x_one_third:Double = (maxX - minX) / 3.0
+        let x_two_third:Double = (maxX - minX) * 2 / 3.0
+        
+        func featureHelper(index: Int, nextElement: Sample2D, element: Sample2D) {
+            features[index] += nextElement.t - element.t
+            features[index + 1] += nextElement.x - element.x
+            features[index + 2] += nextElement.y - element.y
+            
+        }
+        
+        rescaledSamples.enumerated().forEach { index, element in
+            if index == count - 1 {
+                return
+            }
+            let nextElement = rescaledSamples[index + 1]
+            var index:Int = -1
+            
+            if element.x < x_one_third && element.y < y_one_third {
+                index = 0
+            } else if element.x < x_one_third && element.y < y_two_third {
+                index = 3
+            } else if element.x < x_one_third && element.y >= y_two_third {
+                index = 6
+            } else if element.x < x_two_third && element.y < y_one_third {
+                index = 9
+            } else if element.x < x_two_third && element.y < y_two_third {
+                index = 12
+            } else if element.x < x_two_third && element.y >= y_two_third {
+                index = 15
+            } else if element.x >= x_two_third && element.y < y_one_third {
+                index = 18
+            } else if element.x >= x_two_third && element.y < y_two_third {
+                index = 21
+            } else if element.x >= x_two_third && element.y >= y_two_third {
+                index = 24
+            }
+            featureHelper(index: index, nextElement: nextElement, element: element)
+        }
+        features[27] = 1.0
+        
         // -- TASK 1C --
         #if TRAINING
             // Note Swift doesn't support #define. To run this section, set a compiler flag (i.e. "-D TRAINING" under Other Swift Flags)
@@ -126,6 +165,16 @@ class GestureProcessor {
         var best_label = N_LABELS
         var best_score = -Double.infinity
         // Dot product with gesture templates in weights: [[Double]]
+        for label_index in 0..<N_LABELS {
+            var score:Double = 0
+            for feature_index in 0..<N_FEATURES {
+                score += features[feature_index] * weights[label_index][feature_index]
+            }
+            if score > best_score {
+                best_score = score
+                best_label = label_index
+            }
+        }
         
         #if !TRAINING
             // Report strongest match
