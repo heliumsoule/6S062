@@ -197,9 +197,8 @@ class GestureProcessor {
                 average[index] += sample.attitudeM[index]
             }
         }
-        average.map { sum in
-            
-        }
+        average.map { $0 / Float(average.count) }
+        
         // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
         // Then find the rotation matrix most similar to the resulting sum.
         
