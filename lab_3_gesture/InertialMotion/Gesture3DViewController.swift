@@ -93,6 +93,7 @@ class Gesture3DViewController: RibbonViewController, GestureProcessorDelegate {
         var acceleration: GLKVector3 = userAcceleration
         // rotate acceleration from instantaneous coordinates into persistent coordinates
         acceleration = GLKVector3MultiplyScalar(acceleration, -1.0)
+        acceleration = GLKQuaternionRotateVector3(attitudeQ, acceleration)
 
         // -- TASK 2B --
         // integrate acceleration into velocity and velocity into position
