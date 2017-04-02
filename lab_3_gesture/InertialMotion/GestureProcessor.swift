@@ -202,6 +202,8 @@ class GestureProcessor {
         // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
         // Then find the rotation matrix most similar to the resulting sum.
         
+        
+        
         // -- TASK 3B --
         // Project points to 2D:
         // For each i, form the matrix-vector product of M with samples[i].location
