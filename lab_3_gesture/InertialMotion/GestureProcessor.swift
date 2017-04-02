@@ -57,7 +57,8 @@ struct Sample2D {
 
 struct Sample3D {
     var location: GLKVector3
-    var attitude: GLKQuaternion
+    var attitudeQ: GLKQuaternion
+    var attitudeM: GLKMatrix3
     var t: Double
 }
 
@@ -189,6 +190,16 @@ class GestureProcessor {
         // -- TASK 3A --
         // Estimate left-right, up-down axes by averaging orientation over time:
         var M = GLKMatrix3()
+        var average:[Float] = [Float](repeatElement(0, count: 9))
+        
+        samples3D.forEach { sample in
+            average.enumerated().forEach { index, _ in
+                average[index] += sample.attitudeM[index]
+            }
+        }
+        average.map { sum in
+            
+        }
         // For each i, convert samples[i].attitude to a 3x3 matrix and sum it into M.
         // Then find the rotation matrix most similar to the resulting sum.
         
